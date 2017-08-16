@@ -15,6 +15,7 @@ class Pantry
   end
 
   def stock_shelf
+
     Ingredient.names.each do |ingredient_name|
       3.times do
         @shelf.contents << Ingredient.new(ingredient_name)

@@ -20,6 +20,7 @@ class Location
   end
 
   def contents=(value)
+    binding.pry
     @contents = value
   end
 
