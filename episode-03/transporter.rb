@@ -1,7 +1,6 @@
 # The Transporter moves the glass around
 # the ship and ingredients into the glass.
 # It requires power to work properly.
-
 class Transporter
 
   def initialize(enterprise)
@@ -15,6 +14,8 @@ class Transporter
   end
 
   def energize(obj, from, to)
+
+    # binding.pry
     return unless @power
 
     if @enterprise.reactor.draw_power(3)
