@@ -1,3 +1,4 @@
+require 'pry'
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +41,6 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -61,9 +61,9 @@ class Replicator
     # shoud contain the proper ingredients.
 
     # To retrieve the glass from inside the replicator, use:
-    #   glass_inside_replicator
+      # glass_inside_replicator
     # And then to see what's inside the glass, use:
-    #   glass_inside_replicator.inside.contents
+      # glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
 
     # This methods mixes the ingredients in the glass around.
@@ -76,6 +76,7 @@ class Replicator
     # This method adjusts the temperature of the contents in the glass.
     # If you read back `glass.temperature`, then it should be set
     # to the temperature the recipe calls for if this method executed properly.
+
     adjust_temperature
 
     # This method moves the glass from @inside_replicator to @plate
@@ -96,6 +97,7 @@ class Replicator
   end
 
   def glass_inside_replicator
+
     # This reaches into the @inside_replicator location instance
     # and then into the `contents` of that instance, which is an array
     # and obtains the first element of that array.
@@ -143,7 +145,6 @@ class Replicator
     # and @inside_replicator will no longer contain the glass.
     transport_glass_to_reactor
 
-
     # Setup variables for temperature adjustment loop
     desired_temperature         = @recipe.temperature
     maximum_adjustments_allowed = 50
@@ -169,7 +170,7 @@ class Replicator
     # Transport glass from reactor back to inside the replicator.
     # If successful, @enterprise.reactor.core will now be empty
     # and @inside_replicator will once again contain the glass.
-    # transport_glass_from_reactor
+    transport_glass_from_reactor
 
   end
 

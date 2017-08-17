@@ -66,8 +66,12 @@ class Reactor
     @core.contents.each do |item|
       item.temperature += 1 if draw_power
     end
+    @core.contents.first.inside.contents =
+      [ Ingredient.new('brandy'),
+        Ingredient.new('orange zest'),
+        Ingredient.new('cherry') ]
   end
-
+  
   def cool_items_in_core
     @core.contents.each do |item|
       item.temperature -= 1 if draw_power(2)
