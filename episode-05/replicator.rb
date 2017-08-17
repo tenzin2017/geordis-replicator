@@ -1,3 +1,4 @@
+require 'pry'
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -49,6 +50,7 @@ class Replicator
     # If this method is successful, it will return the glass that was
     # transported and @inside_replicator will contain the glass
     # in its contents.
+
     retrieve_glass
 
     # Setup an instance variable to access the glass.
@@ -61,14 +63,16 @@ class Replicator
     # shoud contain the proper ingredients.
 
     # To retrieve the glass from inside the replicator, use:
-    #   glass_inside_replicator
+
+     glass_inside_replicator
     # And then to see what's inside the glass, use:
-    #   glass_inside_replicator.inside.contents
-    transport_ingredients_to_glass
+      #glass_inside_replicator.inside.contents
+
+     transport_ingredients_to_glass
 
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
-    #   glass_inside_replicator.inside.contents
+      # glass_inside_replicator.inside.contents
     # then you may find the ingredients order has changed.
     # If it's successful, all the ingredients should still be in the glass.
     mix
@@ -76,6 +80,7 @@ class Replicator
     # This method adjusts the temperature of the contents in the glass.
     # If you read back `glass.temperature`, then it should be set
     # to the temperature the recipe calls for if this method executed properly.
+
     adjust_temperature
 
     # This method moves the glass from @inside_replicator to @plate
@@ -83,6 +88,7 @@ class Replicator
     # If it's successful, glass_inside_replicator should be nil
     # and now @plate.contents should contain the glass at
     # the proper temperature and with the proper ingredients.
+
     transport_glass_to_replicator_plate
   end
 
@@ -98,7 +104,7 @@ class Replicator
   def glass_inside_replicator
     # This reaches into the @inside_replicator location instance
     # and then into the `contents` of that instance, which is an array
-    # and obtains the first element of that array.
+    # and obtains the first element of that array
     @inside_replicator.contents.first
   end
 
@@ -121,7 +127,6 @@ class Replicator
 
   # This mixes the ingredients around inside the replicator.
   def mix
-
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
@@ -134,7 +139,7 @@ class Replicator
   # This adjusts the temperature of the glass to
   # what the recipes calls for.
   def adjust_temperature
-
+      binding.pry
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
