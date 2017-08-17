@@ -23,6 +23,7 @@ class Reactor
   end
 
   def core
+  
     @core
   end
 

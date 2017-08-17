@@ -67,9 +67,9 @@ class Reactor
       item.temperature += 1 if draw_power
     end
     @core.contents.first.inside.contents =
-      [ Ingredient.new('potato'),
-        Ingredient.new('leeks'),
-        Ingredient.new('broth') ]
+      [ Ingredient.new('water'),
+        Ingredient.new('Altarian lemongrass'),
+         ]
   end
 
   def cool_items_in_core
